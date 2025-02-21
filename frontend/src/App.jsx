@@ -11,6 +11,7 @@ import VideoDisplay from './pages/video/VideoDisplay'
 import { useAuthContext } from './context/AuthContext'
 import VideoUpload from './pages/video/VideoUpload'
 import {Toaster} from "react-hot-toast"
+import Profile from './pages/profile/Profile'
 
 function App() {
   const {authUser} = useAuthContext()
@@ -25,6 +26,7 @@ function App() {
         <Route path='/login' element={authUser ? <Navigate to='/' /> : <Login />} />
         <Route path='/uploadVideo' element={!authUser ? < Navigate to='/login'/> : <VideoUpload />}/>
         <Route path='/videoDisplay' element={<VideoDisplay/>}/>
+        <Route path='/profile' element={<Profile/>}/>
         </Route>
         
       </Routes>

@@ -4,6 +4,7 @@ import { AiOutlineYoutube } from "react-icons/ai";
 import { useAuthContext } from "../../context/AuthContext";
 import { SlLogout } from "react-icons/sl";
 import { useLogout } from "../../hooks/useLogout";
+import { Link } from "react-router";
 
 const Header = () => {
   const { authUser } = useAuthContext();
@@ -18,27 +19,35 @@ const Header = () => {
     <div className="header flex flex-col sm:flex-row justify-between items-center p-4 shadow-lg bg-black border-4 border-red-600 mb-4 rounded-lg space-y-4 sm:space-y-0">
       
       <div className="left-section flex items-center space-x-4">
+      <Link to="/profile">
         <div className="avatar">
+        
           <div className="w-8 rounded-full">
             <img src={avatar} alt="User Avatar" />
           </div>
+          
         </div>
+        </Link>
+
         <AiOutlineYoutube className="youtube-logo text-red-500 text-3xl cursor-pointer" />
       </div>
 
      
       <div className="middle-section flex items-center space-x-2 w-full sm:w-auto">
-        <input
+        {/* <input
           className="search-bar border rounded-full px-4 py-2 w-full sm:w-64  focus:ring-red-600 border-red-400"
           type="text"
           placeholder="Search"
-        />
-        <button className="search-button group flex items-center justify-center bg-gray-200 p-2 rounded-full hover:bg-gray-300 relative">
+        /> */}
+        {/* <button className="search-button group flex items-center justify-center bg-gray-200 p-2 rounded-full hover:bg-gray-300 relative">
           <FaSearch className="search-icon text-red-400" />
           <div className="tooltip absolute top-12 bg-gray-800 text-white text-xs p-2 rounded opacity-0 group-hover:opacity-100 transition-opacity">
             Search
           </div>
-        </button>
+        </button> */}
+         <div className="w-10 rounded-full bg-transparent">
+            <img src="..\public\images.png" alt="User Avatar" />
+          </div>
       </div>
 
       {/* Right Section */}

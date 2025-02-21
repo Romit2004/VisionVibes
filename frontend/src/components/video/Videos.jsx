@@ -23,7 +23,7 @@ const Videos = () => {
       {videos && videos.map((video,idx)=>(
         <Link
         to='/videoDisplay'
-        state ={{videoFile : video.videoFile, title : video.title, description : video.description, uploadedAt : video.updatedAt}}
+        state ={{videoFile : video.videoFile, title : video.title, description : video.description, uploadedAt : video.updatedAt, videoId : video._id}}
         > 
           {video.isPublished? 
         <VideoContainer key={idx} title={video.title} description={video.description} thumbnail={video.thumbnail}/>
